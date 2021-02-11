@@ -1,22 +1,13 @@
-// const body = document.querySelector('body')
-// body.style.backgroundImage = chrome.extension.getURL('catbackground1.png')
 //document.body.style.backgroundColor = 'red';
+const text = document.querySelectorAll('h1, h2, h3, h4, h5, p, li, td, caption, span, a')
 
-
-var input = document.getElementById('getval');
-    input.onchange = function(evt){
-        var tgt = evt.target || window.event.srcElement, 
-            files = tgt.files;
-        if (FileReader && files && files.length) {
-            var fr = new FileReader();
-            fr.onload = function () {
-                localStorage['catbackground2.png'] = fr.result;
-            }
-            fr.readAsDataURL(files[0]);
-        }
+for (let i=0; i < text.length; i++) {
+  if (text[i].innerHTML.includes('m')) {
+    text[i].innerHTML = text[i].innerHTML.replace('m', 'meow');
+  }
 }
+document.addEventListener('keydown', (e) => {
+  console.log(e.code)
+})
 
-window.onload=function(){
-  var el = document.querySelector('body');
-  el.style.backgroundImage = 'url(' + localStorage['catbackground2.png'] + ')';
-}
+document.body.style.backgroundImage = 'url("chrome-extension://@'+chrome.runtime.id+'/cat1.png")'
