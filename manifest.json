@@ -1,0 +1,10 @@
+{
+  "name": "Catify Chrome",
+  
+  "version": "1.0",
+  
+  "description": "This Chrome extension Catifies Google Chrome",
+  
+  "manifest_version": 2
+  
+}
